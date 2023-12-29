@@ -26,12 +26,13 @@ suite('Functional Tests', function() {
         assert.equal(res.status, 200);
         assert.equal(res.body.initNum, 10);
         assert.equal(res.body.initUnit, 'l');
-        assert.approximately(res.body.returnNum, 2.64172, 0.1);
         assert.equal(res.body.returnUnit, 'gal');
-        assert.equal(res.body.string, '10 liters converts to 2.64172 gallons');
+        assert.equal(res.body.string, '10 liters converts to 2.64172 gallons'); // Updated string comparison
+        assert.equal(res.body.returnNum.toFixed(5), '2.64172'); // Convert returnNum to string with fixed precision and compare
         done();
       });
   });
+  
   
   test('Convert an invalid input such as 32g: GET request to /api/convert', function(done) {
     chai.request(server)

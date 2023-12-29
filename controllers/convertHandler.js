@@ -7,6 +7,11 @@ function ConvertHandler() {
   
     // Handle cases like fractions or decimals
     if (numStr.includes('/')) {
+      // Check for multiple slashes (indicating a double-fraction)
+      if (numStr.split('/').length > 2) {
+        return 'invalid'; // Return 'invalid' for double-fraction inputs
+      }
+  
       let [first, second] = numStr.split('/');
       numStr = parseFloat(first) / parseFloat(second);
     } else {
@@ -14,7 +19,7 @@ function ConvertHandler() {
     }
   
     if (isNaN(numStr)) {
-      return 1; // If no number is provided, default to 1
+      return 1;
     } else {
       return numStr;
     }
