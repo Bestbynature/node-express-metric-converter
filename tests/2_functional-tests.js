@@ -77,7 +77,7 @@ suite('Functional Tests', function() {
         assert.equal(res.body.initUnit, 'kg');
         assert.approximately(res.body.returnNum, 2.20462, 0.1);
         assert.equal(res.body.returnUnit, 'lbs');
-        assert.equal(res.body.string, '1 kilogram converts to 2.20462 pounds');
+        assert.equal(res.body.string, '1 kilograms converts to 2.20462 pounds');
         done();
       });
   });
