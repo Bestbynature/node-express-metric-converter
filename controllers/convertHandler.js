@@ -27,13 +27,13 @@ function ConvertHandler() {
   
   
   this.getUnit = function(input) {
-    const units = ['gal', 'l', 'mi', 'km', 'lbs', 'kg']; // Define valid units
-    const regex = /[a-zA-Z]/; // Regex to find the index of the first letter
+    const units = ['gal', 'l', 'mi', 'km', 'lbs', 'kg']; 
+    const regex = /[a-zA-Z]/;
     const index = input.search(regex);
-    let unit = input.slice(index).toLowerCase(); // Extract the unit part
+    let unit = input.slice(index).toLowerCase(); 
   
     if (!units.includes(unit)) {
-      return 'invalid'; // Return 'invalid' for invalid units
+      return 'invalid';
     } else {
       return unit;
     }
