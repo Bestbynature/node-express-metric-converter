@@ -1,27 +1,21 @@
 function ConvertHandler() {
   this.getNum = function (input) {
-    const regex = /[a-zA-Z]/; // Regex to find the index of the first letter
+    const regex = /[a-zA-Z]/; 
     const index = input.search(regex);
-    let numStr = input.slice(0, index !== -1 ? index : input.length); // Extract the number part
+    let numStr = input.slice(0, index !== -1 ? index : input.length); 
 
-    // Handle cases like fractions or decimals
     if (numStr.includes("/")) {
-      // Check for multiple slashes (indicating a double-fraction)
-      if (numStr.split("/").length > 2) {
-        return "invalid"; // Return 'invalid' for double-fraction inputs
-      }
-
+      
+      if (numStr.split("/").length > 2) return "invalid"; 
+      
       let [first, second] = numStr.split("/");
       numStr = parseFloat(first) / parseFloat(second);
-    } else {
-      numStr = parseFloat(numStr);
-    }
+    } else numStr = parseFloat(numStr);
+    
 
-    if (isNaN(numStr)) {
-      return 1;
-    } else {
-      return numStr;
-    }
+    if (isNaN(numStr)) return 1;
+    else return numStr;
+    
   };
 
   this.getUnit = function (input) {
@@ -37,18 +31,38 @@ function ConvertHandler() {
     }
   };
 
-  this.getReturnUnit = function (initUnit) {
+  this.getReturnUnit = function(initUnit) {
     const unitPairs = {
-      gal: "L",
-      l: "gal",
-      mi: "km",
-      km: "mi",
-      lbs: "kg",
-      kg: "lbs",
+      gal: 'L',
+      l: 'gal',
+      mi: 'km',
+      km: 'mi',
+      lbs: 'kg',
+      kg: 'lbs',
     };
-
-    return unitPairs[initUnit];
+  
+    const unit = initUnit.toLowerCase();
+    return unitPairs[unit];
+    // if (unit === 'gal') {
+    //   return 'L'; 
+    // } else {
+    //   return unitPairs[unit];
+    // }
   };
+  
+
+  // this.getReturnUnit = function (initUnit) {
+  //   const unitPairs = {
+  //     gal: "L",
+  //     l: "gal",
+  //     mi: "km",
+  //     km: "mi",
+  //     lbs: "kg",
+  //     kg: "lbs",
+  //   };
+
+  //   return unitPairs[initUnit];
+  // };
 
   this.spellOutUnit = function (unit) {
     const unitNames = {
