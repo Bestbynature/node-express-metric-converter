@@ -69,7 +69,7 @@ suite('Unit Tests', function () {
 
   test('convertHandler should correctly return the spelled-out string unit for each valid input unit', function () {
     const units = ['gal', 'l', 'mi', 'km', 'lbs', 'kg'];
-    const expectedStrings = ['gallons', 'liters', 'miles', 'kilometers', 'pounds', 'kilograms'];
+    const expectedStrings = ['gallons', 'L', 'miles', 'kilometers', 'pounds', 'kilograms'];
     units.forEach((unit, index) => {
       const result = convertHandler.spellOutUnit(unit);
       assert.equal(result, expectedStrings[index]);
