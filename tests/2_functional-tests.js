@@ -20,7 +20,8 @@ suite('Functional Tests', function() {
         assert.equal(res.body.initNum, 10);
         assert.equal(res.body.initUnit, 'l');
         assert.equal(res.body.returnUnit, 'gal');
-        assert.equal(res.body.string, '10 L converts to 2.6417200000000003 gallons');
+        assert.equal(res.body.string, '10 liters converts to 2.64172 gallons'); // Updated string comparison
+        // assert.equal(parseFloat(res.body.returnNum).toFixed(5), '2.64172'); // Convert returnNum to string with fixed precision and compare
         assert.ok(approximatelyEqual(parseFloat(res.body.returnNum), 2.64172));
         done();
       });

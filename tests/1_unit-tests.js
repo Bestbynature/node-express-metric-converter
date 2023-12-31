@@ -1,3 +1,13 @@
+// const chai = require('chai');
+// let assert = chai.assert;
+// const ConvertHandler = require('../controllers/convertHandler.js');
+
+// let convertHandler = new ConvertHandler();
+
+// suite('Unit Tests', function(){
+  
+
+// });
 
 const chai = require('chai');
 let assert = chai.assert;
@@ -60,7 +70,7 @@ suite('Unit Tests', function () {
 
   test('convertHandler should return the correct return unit for each valid input unit', function () {
     const inputUnits = ['gal', 'l', 'mi', 'km', 'lbs', 'kg'];
-    const expectedReturnUnits = ['L', 'gal', 'km', 'mi', 'kg', 'lbs'];
+    const expectedReturnUnits = ['l', 'gal', 'km', 'mi', 'kg', 'lbs'];
     inputUnits.forEach((unit, index) => {
       const result = convertHandler.getReturnUnit(unit);
       assert.equal(result, expectedReturnUnits[index]);
@@ -69,7 +79,7 @@ suite('Unit Tests', function () {
 
   test('convertHandler should correctly return the spelled-out string unit for each valid input unit', function () {
     const units = ['gal', 'l', 'mi', 'km', 'lbs', 'kg'];
-    const expectedStrings = ['gallons', 'L', 'miles', 'kilometers', 'pounds', 'kilograms'];
+    const expectedStrings = ['gallons', 'liters', 'miles', 'kilometers', 'pounds', 'kilograms'];
     units.forEach((unit, index) => {
       const result = convertHandler.spellOutUnit(unit);
       assert.equal(result, expectedStrings[index]);
@@ -80,41 +90,41 @@ suite('Unit Tests', function () {
     const input = [5, 'gal'];
     const expected = 18.92705;
     const result = convertHandler.convert(...input);
-    assert.approximately(result, expected, 0.1); // Allowing a small margin of error
+    assert.equal(result, expected);
   });
 
   test('convertHandler should correctly convert L to gal', function () {
     const input = [5, 'l'];
     const expected = 1.32086;
     const result = convertHandler.convert(...input);
-    assert.approximately(result, expected, 0.1);
+    assert.equal(result, expected);
   });
 
   test('convertHandler should correctly convert mi to km', function () {
     const input = [5, 'mi'];
     const expected = 8.0467;
     const result = convertHandler.convert(...input);
-    assert.approximately(result, expected, 0.1);
+    assert.equal(result, expected);
   });
 
   test('convertHandler should correctly convert km to mi', function () {
     const input = [5, 'km'];
     const expected = 3.10686;
     const result = convertHandler.convert(...input);
-    assert.approximately(result, expected, 0.1);
+    assert.equal(result, expected);
   });
 
   test('convertHandler should correctly convert lbs to kg', function () {
     const input = [5, 'lbs'];
     const expected = 2.26796;
     const result = convertHandler.convert(...input);
-    assert.approximately(result, expected, 0.1);
+    assert.equal(result, expected);
   });
 
   test('convertHandler should correctly convert kg to lbs', function () {
     const input = [5, 'kg'];
-    const expected = 11.02312;
+    const expected = 11.0231;
     const result = convertHandler.convert(...input);
-    assert.approximately(result, expected, 0.1);
+    assert.equal(result, expected);
   });
 });
