@@ -39,7 +39,7 @@ function ConvertHandler() {
 
   this.getReturnUnit = function (initUnit) {
     const unitPairs = {
-      gal: "l",
+      gal: "L",
       l: "gal",
       mi: "km",
       km: "mi",
@@ -73,7 +73,7 @@ function ConvertHandler() {
       kg: 2.204624,
     };
 
-    const precision = 100000; // For 5 decimal places
+    const precision = 100000;
     const num = initNum * conversions[initUnit];
     
     const multiplied = num * precision;
@@ -85,18 +85,6 @@ function ConvertHandler() {
     } else {
       return floored / precision;
     }
-
-    //   // Convert initNum to float value before multiplying
-    // const result = initNum * conversions[initUnit];
-
-    // // Round up the result to the nearest whole number
-    // return Math.ceil(result * 100000) / 100000; // Round to 5 decimal places
-
-    // convert initNum to float value before multiplying
-
-    // return parseFloat((initNum * conversions[initUnit]).toFixed(5));
-
-    // return initNum * conversions[initUnit];
   };
 
   this.getString = function (initNum, initUnit, returnNum, returnUnit) {
