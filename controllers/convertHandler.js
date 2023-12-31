@@ -42,7 +42,7 @@ function ConvertHandler() {
   
   this.getReturnUnit = function(initUnit) {
     const unitPairs = {
-      'gal': 'l',
+      'gal': 'L',
       'l': 'gal',
       'mi': 'km',
       'km': 'mi',

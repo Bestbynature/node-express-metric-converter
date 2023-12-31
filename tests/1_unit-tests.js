@@ -1,13 +1,3 @@
-// const chai = require('chai');
-// let assert = chai.assert;
-// const ConvertHandler = require('../controllers/convertHandler.js');
-
-// let convertHandler = new ConvertHandler();
-
-// suite('Unit Tests', function(){
-  
-
-// });
 
 const chai = require('chai');
 let assert = chai.assert;
@@ -70,7 +60,7 @@ suite('Unit Tests', function () {
 
   test('convertHandler should return the correct return unit for each valid input unit', function () {
     const inputUnits = ['gal', 'l', 'mi', 'km', 'lbs', 'kg'];
-    const expectedReturnUnits = ['l', 'gal', 'km', 'mi', 'kg', 'lbs'];
+    const expectedReturnUnits = ['L', 'gal', 'km', 'mi', 'kg', 'lbs'];
     inputUnits.forEach((unit, index) => {
       const result = convertHandler.getReturnUnit(unit);
       assert.equal(result, expectedReturnUnits[index]);
