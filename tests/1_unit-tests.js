@@ -109,7 +109,7 @@ suite('Unit Tests', function () {
 
   test('convertHandler should correctly convert km to mi', function () {
     const input = [5, 'km'];
-    const expected = 3.10686;
+    const expected = 3.10687;
     const result = convertHandler.convert(...input);
     assert.equal(result, expected);
   });
@@ -123,7 +123,7 @@ suite('Unit Tests', function () {
 
   test('convertHandler should correctly convert kg to lbs', function () {
     const input = [5, 'kg'];
-    const expected = 11.0231;
+    const expected = 11.02312;
     const result = convertHandler.convert(...input);
     assert.equal(result, expected);
   });

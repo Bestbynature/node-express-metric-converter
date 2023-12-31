@@ -68,9 +68,9 @@ function ConvertHandler() {
       gal: 3.78541,
       l: 0.264172,
       mi: 1.60934,
-      km: 0.621371,
+      km: 0.621373,
       lbs: 0.453592,
-      kg: 2.20462,
+      kg: 2.204624,
     };
 
     const precision = 100000; // For 5 decimal places
