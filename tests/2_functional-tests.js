@@ -5,10 +5,6 @@ const server = require('../server');
 
 chai.use(chaiHttp);
 
-function approximatelyEqual(num1, num2, epsilon = 0.0001) {
-  return Math.abs(num1 - num2) < epsilon;
-}
-
 suite('Functional Tests', function() {
   
   test('Convert a valid input such as 10L: GET request to /api/convert', function(done) {
@@ -18,7 +14,7 @@ suite('Functional Tests', function() {
       .end(function(err, res) {
         assert.equal(res.status, 200);
         assert.equal(res.body.initNum, 10);
-        assert.equal(res.body.initUnit, 'l');
+        assert.equal(res.body.initUnit, 'L');
         assert.equal(res.body.returnUnit, 'gal');
         assert.equal(res.body.string, '10 liters converts to 2.64172 gallons'); // Updated string comparison
         assert.equal(res.body.returnNum, 2.64172); // Updated returnNum comparison

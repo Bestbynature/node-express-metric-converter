@@ -54,7 +54,7 @@ suite('Unit Tests', function () {
   });
 
   test('convertHandler should correctly read each valid input unit', function () {
-    const units = ['gal', 'l', 'mi', 'km', 'lbs', 'kg'];
+    const units = ['gal', 'L', 'mi', 'km', 'lbs', 'kg'];
     units.forEach(unit => {
       const input = `5${unit}`;
       const result = convertHandler.getUnit(input);
@@ -94,7 +94,7 @@ suite('Unit Tests', function () {
   });
 
   test('convertHandler should correctly convert L to gal', function () {
-    const input = [5, 'l'];
+    const input = [5, 'L'];
     const expected = 1.32086;
     const result = convertHandler.convert(...input);
     assert.equal(result, expected);

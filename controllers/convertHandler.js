@@ -27,6 +27,7 @@ function ConvertHandler() {
     if (!units.includes(unit)) {
       return "invalid";
     } else {
+      if(unit === 'l') return unit.toUpperCase();
       return unit;
     }
   };
@@ -64,7 +65,7 @@ function ConvertHandler() {
   this.convert = function (initNum, initUnit) {
     const conversions = {
       gal: 3.78541,
-      l: 0.264172,
+      L: 0.264172,
       mi: 1.60934,
       km: 0.621373,
       lbs: 0.453592,
