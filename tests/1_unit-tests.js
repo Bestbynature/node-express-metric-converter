@@ -69,7 +69,7 @@ suite('Unit Tests', function () {
   });
 
   test('convertHandler should return the correct return unit for each valid input unit', function () {
-    const inputUnits = ['gal', 'l', 'mi', 'km', 'lbs', 'kg'];
+    const inputUnits = ['GAL', 'L', 'MI', 'km', 'lbs', 'kg'];
     const expectedReturnUnits = ['L', 'gal', 'km', 'mi', 'kg', 'lbs'];
     inputUnits.forEach((unit, index) => {
       const result = convertHandler.getReturnUnit(unit);

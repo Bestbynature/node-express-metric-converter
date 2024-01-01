@@ -43,28 +43,10 @@ function ConvertHandler() {
   
     const unit = initUnit.toLowerCase();
     return unitPairs[unit];
-    // if (unit === 'gal') {
-    //   return 'L'; 
-    // } else {
-    //   return unitPairs[unit];
-    // }
   };
   
 
-  // this.getReturnUnit = function (initUnit) {
-  //   const unitPairs = {
-  //     gal: "L",
-  //     l: "gal",
-  //     mi: "km",
-  //     km: "mi",
-  //     lbs: "kg",
-  //     kg: "lbs",
-  //   };
-
-  //   return unitPairs[initUnit];
-  // };
-
-  this.spellOutUnit = function (unit) {
+   this.spellOutUnit = function (unit) {
     const unitNames = {
       gal: "gallons",
       l: "liters",
@@ -73,6 +55,8 @@ function ConvertHandler() {
       lbs: "pounds",
       kg: "kilograms",
     };
+
+    unit = unit.toLowerCase();
 
     return unitNames[unit];
   };
